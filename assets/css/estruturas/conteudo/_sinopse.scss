@@ -1,0 +1,22 @@
+@import '../../ferramentas/ferramentas.scss';
+
+section.sinopse {
+    border-top: 1px solid darken($cinza, 33%);
+    border-bottom: 1px solid darken($cinza, 33%);
+
+    div.conteudo {
+        box-sizing: border-box;
+        @include flexColumn(1rem);
+        padding: 0 1rem;
+
+        p.descricao {
+            text-align: left;
+            line-height: 1.5rem;
+            color: lighten($cinza, 10%);
+        }
+
+        a.btnCta {
+            margin-top: .5rem;
+        }
+    }
+}

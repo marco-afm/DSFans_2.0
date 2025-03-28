@@ -1,0 +1,137 @@
+@import '../mixins/mixins';
+
+// ========== Cores ========== //
+$pretoMax: #000000;
+$preto: #111111;
+$cinza: lighten($preto, 50%);
+$brancoMax: #ffffff;
+$branco: #eeeeee;
+$corPrimaria: #ee1c24;
+
+
+// ========== Fontes ========== //
+$ftTitulo: "Saira", serif;
+$ftTexto: "Inter";
+
+
+// ========== HTML ========== //
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    box-sizing: border-box;
+    @include flexColumn(0);
+    @include size(auto, 100%);
+    background-color: darken($cinza, 40%);
+    box-shadow: inset 0px 0px 300px 0px $pretoMax;
+    padding: 66px 0;
+}
+
+.container {
+    box-sizing: border-box;
+    // padding: 2rem 0;
+    width: 100%;
+
+    @include mediaScreen(laptop) {
+        width: 965px;
+        margin: 0 auto;
+    }
+    @include mediaScreen(desktop) {
+        width: 1440px;
+    }
+}
+
+.gapSection {
+    box-sizing: border-box;
+    padding: 2rem 0;
+}
+
+.containerEscurecido {
+    @include size(100vw, 100vh);
+    opacity: 0;
+    transition: ease-in-out .33s;
+    background-color: #00000080;
+    backdrop-filter: blur(1px);
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -10;
+
+    &.visivel {
+        opacity: 1;
+        z-index: 99;
+    }
+}
+
+img {
+    object-fit: contain;
+}
+
+.caixaTitulo {
+    @include flexAlignContent(row, space-between, center, .25rem);
+}
+
+.btnCta {
+    box-sizing: border-box;
+    @include flexAlignContent(row, center, center, 0);
+    padding: .5rem 2rem;
+    width: fit-content;
+    
+    background-color: transparent;
+    border: 1px solid $corPrimaria;
+    border-radius: 2rem;
+    
+    font: 400 .875rem $ftTexto;
+    text-decoration: none;
+    color: $corPrimaria;
+    transition: .33s;
+
+    &:hover {
+        box-shadow: 0 0 15px 0 $pretoMax;
+        background-color: $corPrimaria;
+        color: $branco;
+    }
+}
+
+
+// ========== Classes Valor Padrão ========== //
+.ftTitulo {
+    font-weight: 700;
+    font-family: $ftTitulo;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 10px $pretoMax;
+    color: $corPrimaria;
+}
+.ftTexto {
+    font-weight: 400;
+    font-family: $ftTexto;
+    line-height: 1.25rem;
+    color: $cinza;
+}
+.link {
+    font: 400 .875rem $ftTexto;
+    text-decoration: none;
+}
+.linhaDivisoria {
+    @include size(125px, 2px);
+    background-color: $corPrimaria;
+    border: none;
+    margin: -.5rem 0 0 0;
+}
+.icone {
+    @include size(1.75rem, 1.75rem);
+    filter: invert(.5);
+    transition: .33s;
+    cursor: pointer;
+}
+.iconeSessao {
+    @include size(1.75rem, 1.75rem);
+    object-fit: contain;
+}

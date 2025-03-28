@@ -1,0 +1,73 @@
+@import '../../ferramentas/ferramentas.scss';
+
+section.temporadas {
+
+    div.conteudo {
+        @include flexColumn(2rem);
+
+        article.caixa-topo {
+            box-sizing: border-box;
+            @include flexAlignContent(column, center, center, 0);
+            background-color: $corPrimaria;
+            padding: .5rem 0;
+
+            h2.titulo {
+                letter-spacing: -2px;
+                font-size: 1.75rem;
+                text-shadow: none;
+                color: $preto;
+            }
+
+            p.legenda {
+                text-transform: uppercase;
+                font-weight: 700;
+                font-size: .875rem;
+                color: $branco;
+            }
+        }
+
+        div.containerCarrosel {
+            box-sizing: border-box;
+            padding: 0 1rem;
+
+            ul.carrosel {
+                box-sizing: border-box;
+                @include flexAlignContent(row, null, null, 1.5rem);
+                @include size(100%, auto);
+                padding: 0 0 .5rem 0;
+                overflow-x: auto;
+    
+                &::-webkit-scrollbar {
+                    height: 8px;
+                    background-color: lighten($preto, 15%);
+                    border-radius: 2rem 0 2rem 0;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background-color: $cinza;
+                    border-radius: 2rem 0 2rem 0;
+                }
+    
+                li.item {
+                    @include flexAlignContent(column, center, center, 0);
+                    list-style-type: none;
+                    
+                    a.link {
+                        @include flexColumn(0);
+                        transition: .33s;
+                        border-radius: .5rem;
+                        
+                        img.capaTemporada {
+                            @include size(150px, auto);
+                            border-radius: .5rem;
+                        }
+                    }
+    
+                    h4.legenda {
+                        font-size: .75rem;
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+}

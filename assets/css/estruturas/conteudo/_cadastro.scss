@@ -1,0 +1,72 @@
+@import '../../ferramentas/ferramentas.scss';
+
+section.cadastro {
+    border-top: 1px solid darken($cinza, 33%);
+    border-bottom: 1px solid darken($cinza, 33%);
+
+    div.conteudo {
+        box-sizing: border-box;
+        @include flexColumn(1rem);
+        padding: 0 1rem;
+
+        h2.titulo {
+            color: $corPrimaria;
+        }
+
+        form.formulario {
+            box-sizing: border-box;
+            @include flexAlignContent(row, center, center, 0);
+            @include size(100%, 40px);
+            border: 1px solid $cinza;
+            border-radius: 2rem;
+            padding: .125rem .15rem;
+            
+            input#inputEmail {
+                box-sizing: border-box;
+                @include size(100%, 100%);
+                padding: 0 1rem;
+                outline: none;
+                font: 400 1rem $ftTexto;
+                color: $branco;
+
+                background-color: transparent;
+                border-radius: 2rem;
+                border: none;
+
+                &::placeholder {
+                    font-size: .875rem;
+                }
+                &::marker {
+                    background-color: transparent;
+                }
+            }
+
+            button.btnForm {
+                @include flexAlignContent(row, center, center, 0);
+                background-color: $corPrimaria;
+                border: none;
+                border-radius: 2rem;
+
+                min-width: 50px;
+                min-height: 33px;
+                position: relative;
+                cursor: pointer;
+                transition: .33s;
+
+                &:hover {
+                    background-color: darken($corPrimaria, 10%);
+                }
+
+                img.iconeEnviar {
+                    @include size(1.125rem, 1.125rem);
+                    filter: invert(1);
+
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    transform: translate(95%, 42%);
+                }
+            }
+        }
+    }
+}

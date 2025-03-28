@@ -1,0 +1,80 @@
+@import '../../ferramentas/ferramentas.scss';
+
+header.cabecalho {
+    box-sizing: border-box;
+    @include size(100%, 66px);
+    background-color: $preto;
+    border-bottom: 3px solid $corPrimaria;
+    box-shadow: 0 5px 10px 0 $pretoMax;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+
+    div.conteudo {
+        box-sizing: border-box;
+        @include flexAlignContent(row, space-between, center, 1rem);
+        padding: 0 1rem;
+        height: 100%;
+
+        a.logo-link {
+            text-decoration: none;
+
+            h1.titulo {
+                text-transform: none;
+                text-shadow: none;
+
+                strong {
+                    color: darken($cinza, 20%);
+                }
+            }
+        }
+
+        img.iconeUsuario {
+            @include size(2.5rem, 2.5rem);
+            object-fit: contain;
+
+            filter: invert(.5);
+            transition: .33s;
+            cursor: pointer;
+            
+            &:hover {
+                filter: invert(.125);
+            }
+        }
+
+        nav.navegacao {
+            box-sizing: border-box;
+            @include flexAlignContent(row, space-around, center);
+            @include size(100%, 66px);
+            box-shadow: 5px 0 10px 0 $pretoMax;
+            background-color: $preto;
+            padding: 0 1rem;
+            
+            position: fixed;
+            left: 0;
+            bottom: 0;
+    
+            a.link {
+                @include flexAlignContent(column, center, center, .25rem);
+                @include size(100px, auto);
+                
+                p {
+                    font-size: .75rem;
+                    transition: .33s;
+                }
+
+                &:hover {
+                    img {
+                        filter: invert(.125);
+                    }
+                    
+                    p {
+                        color: $branco;
+                    }
+                }
+            }
+        }
+    }
+}

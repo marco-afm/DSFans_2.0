@@ -1,0 +1,41 @@
+@import '../../ferramentas/ferramentas.scss';
+
+section.novidades {
+    
+    div.conteudo {
+        box-sizing: border-box;
+        @include flexColumn(1rem);
+        padding: 0 1rem;
+
+        article.descricao {
+            box-sizing: border-box;
+            @include flexColumn(1rem);
+
+            p.legenda {
+                box-sizing: border-box;
+                box-shadow: inset 0 0 20px 0 $corPrimaria;
+                border-radius: .5rem;
+                padding: 1rem;
+
+                color: $branco;
+                font-weight: 700;
+                text-align: center;
+
+                strong {
+                    color: $corPrimaria;
+                }
+            }
+
+            p.texto {
+                font-size: .875rem;
+                line-height: 1.125rem;
+            }
+        }
+
+        img.imagemNovidades {
+            box-sizing: border-box;
+            margin: 0 2rem;
+            border-radius: .5rem;
+        }
+    }
+}

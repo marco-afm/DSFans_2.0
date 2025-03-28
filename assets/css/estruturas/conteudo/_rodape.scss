@@ -1,0 +1,23 @@
+@import '../../ferramentas/ferramentas.scss';
+
+footer.rodape {
+    padding: 0;
+
+    div.conteudo {
+        box-sizing: border-box;
+        @include flexAlignContent(row, center, center, 0);
+        padding: 2rem 0;
+
+        p.texto {
+
+            a.linkRodape {
+                text-decoration: none;
+                color: lighten($cinza, 20%);
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

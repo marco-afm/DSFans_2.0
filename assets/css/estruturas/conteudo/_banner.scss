@@ -1,0 +1,37 @@
+@import '../../ferramentas/ferramentas.scss';
+
+section.banner {
+    box-sizing: border-box;
+    @include size(100%, auto);
+
+    div.conteudo {
+        position: relative;
+        padding: 0;
+
+        img.imgBanner {
+            display: none;
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+
+            &.bannerMobile {
+                display: block;
+            }
+        }
+
+        article.descricao {
+            box-sizing: border-box;
+            @include flexColumn(0);
+            border-left: 1px solid $branco;
+            padding: 0 0 0 1rem;
+            
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+
+            h2.titulo {
+                color: $branco;
+            }
+        }
+    }
+}

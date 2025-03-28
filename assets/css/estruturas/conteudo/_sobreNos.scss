@@ -1,0 +1,18 @@
+@import '../../ferramentas/ferramentas.scss';
+
+section.sobreNos {
+    padding: 2rem 1rem;
+    
+    div.conteudo {
+        @include flexColumn(1rem);
+        padding: 1rem;
+
+        box-shadow: 0 0 10px 0 $pretoMax;
+        background-color: lighten($preto, 15%);
+        border-radius: .5rem;
+
+        p.descricao {
+            color: lighten($cinza, 20%);
+        }
+    }
+}

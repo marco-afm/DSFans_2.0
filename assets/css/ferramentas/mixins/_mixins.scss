@@ -1,0 +1,38 @@
+// ========== Flexbox ========== //
+@mixin flexColumn($gap: 0) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}
+
+@mixin flexAlignContent(
+    $direction: row, 
+    $justify: left, 
+    $align: flex-start, 
+    $gap: 0
+    ) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+// ========== Media Screen ========== //
+@mixin mediaScreen($screenSize) {
+    @if $screenSize == mobile {
+        @media screen and (min-width: 360px) { @content; }
+    } @else if $screenSize == tablet {
+        @media screen and (min-width: 768px) { @content; }
+    } @else if $screenSize == laptop {
+        @media screen and (min-width: 1024px) { @content; }
+    } @else if $screenSize == desktop {
+        @media screen and (min-width: 1880px) { @content; }
+    }
+}
+
+// ========== Size ========== //
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}

@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: auto;
+  height: 100%;
+  background-color: #2b2b2b;
+  box-shadow: inset 0px 0px 300px 0px #000000;
+  padding: 66px 0;
+}
+
+.container {
+  box-sizing: border-box;
+  width: 100%;
+}
+@media screen and (min-width: 1024px) {
+  .container {
+    width: 965px;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 1880px) {
+  .container {
+    width: 1440px;
+  }
+}
+
+.gapSection {
+  box-sizing: border-box;
+  padding: 2rem 0;
+}
+
+.containerEscurecido {
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  transition: ease-in-out 0.33s;
+  background-color: rgba(0, 0, 0, 0.5019607843);
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -10;
+}
+.containerEscurecido.visivel {
+  opacity: 1;
+  z-index: 99;
+}
+
+img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.caixaTitulo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.btnCta {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  padding: 0.5rem 2rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: transparent;
+  border: 1px solid #ee1c24;
+  border-radius: 2rem;
+  font: 400 0.875rem "Inter";
+  text-decoration: none;
+  color: #ee1c24;
+  transition: 0.33s;
+}
+.btnCta:hover {
+  box-shadow: 0 0 15px 0 #000000;
+  background-color: #ee1c24;
+  color: #eeeeee;
+}
+
+.ftTitulo {
+  font-weight: 700;
+  font-family: "Saira", serif;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 10px #000000;
+  color: #ee1c24;
+}
+
+.ftTexto {
+  font-weight: 400;
+  font-family: "Inter";
+  line-height: 1.25rem;
+  color: #919191;
+}
+
+.link {
+  font: 400 0.875rem "Inter";
+  text-decoration: none;
+}
+
+.linhaDivisoria {
+  width: 125px;
+  height: 2px;
+  background-color: #ee1c24;
+  border: none;
+  margin: -0.5rem 0 0 0;
+}
+
+.icone {
+  width: 1.75rem;
+  height: 1.75rem;
+  filter: invert(0.5);
+  transition: 0.33s;
+  cursor: pointer;
+}
+
+.iconeSessao {
+  width: 1.75rem;
+  height: 1.75rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}/*# sourceMappingURL=ferramentas.css.map */
