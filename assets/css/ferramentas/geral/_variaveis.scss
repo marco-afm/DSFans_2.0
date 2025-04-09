@@ -1,0 +1,19 @@
+// ========== Cores ========== //
+$pretoMax: #000000;
+$preto: #111111;
+
+$cinza: lighten($pretoMax, 33%);
+$cinzaEscuro: darken($cinza, 20%);
+$cinzaClaro: lighten($cinza, 20%);
+
+$brancoMax: #ffffff;
+$branco: #eeeeee;
+
+$corPrimaria: #ee1c24;
+$corPrimariaEscura: darken($corPrimaria, 15%);
+$corPrimariaClara: lighten($corPrimaria, 10%);
+
+
+// ========== Fontes ========== //
+$ftTitulo: 'Saira', sans-serif;
+$ftDescricao: 'Inter';

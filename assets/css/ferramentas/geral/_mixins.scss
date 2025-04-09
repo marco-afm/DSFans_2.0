@@ -1,0 +1,58 @@
+@import 'variaveis';
+
+// ========== Flexbox ========== //
+@mixin flexColumn($gap: 0) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}
+@mixin flexAlignContent(
+    $direction: row,
+    $justify: start,
+    $align: left,
+    $gap: 0
+) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+
+// ========== Media Querie ========== //
+@mixin TABLET() {
+    @media screen and (min-width: 768px) { @content; }
+}
+@mixin LAPTOP() {
+    @media screen and (min-width: 1024px) { @content; }
+}
+@mixin DESKTOP() {
+    @media screen and (min-width: 1920px) { @content; }
+}
+
+
+// ========== Size ========== //
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+
+// ========== Separador ========== //
+@mixin separador($height: 3px, $margin: 0 0 0 0, $bgColor: $corPrimaria) {
+    &::after {
+        content: "";
+        display: block;
+        width: 150px;
+        height: $height;
+        margin: $margin;
+        background-color: $bgColor;
+        border-radius: 2rem;
+        border: none;
+
+        @include LAPTOP {
+            width: 200px;
+        }
+    }
+}

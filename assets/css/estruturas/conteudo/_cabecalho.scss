@@ -1,0 +1,116 @@
+@import '../../ferramentas/ferramentas.scss';
+
+header.cabecalho {
+    @include size(100vw, 75px);
+    border-bottom: 2px solid transparent;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    
+    &.destacado {
+        border-bottom: 2px solid $corPrimaria;
+        box-shadow: 0 5px 10px 0 $pretoMax;
+        background-color: $preto;
+        transition: .5s;
+    }
+
+    div.conteudo {
+        @include flexAlignContent(row, space-between, center, 1rem);
+        height: 100%;
+        transition: 1s;
+
+        @include LAPTOP {
+            gap: 3rem;
+        }
+
+        div.caixaMenu {
+            @include LAPTOP {
+                display: none;
+            }
+        }
+        
+        a.logo {
+            font-size: 2rem;
+            text-decoration: none;
+
+            strong {
+                font-weight: 700;
+                color: $branco;
+            }
+        }
+
+        nav.navegacao {
+            @include flexColumn(1rem);
+            @include size(75vw, 100vh);
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.95);
+            border-right: 2px solid $corPrimaria;
+
+            position: fixed;
+            top: 0;
+            left: -100%;
+            z-index: 99;
+
+            &.visivel { left: 0; }
+
+            @include LAPTOP {
+                @include flexAlignContent(row, right, center, 3rem);
+                @include size(100%, auto);
+                background-color: transparent;
+                border: none;
+                padding: 0;
+                position: initial;
+            }
+
+            div.topoNavegacao {
+                @include flexAlignContent(row, space-between, center, 0);
+                width: 100%;
+                margin: 0 0 2rem 0;
+                
+                @include LAPTOP {
+                    display: none;
+                }
+                
+                span.logo {
+
+                    strong {
+                        font-weight: 700;
+                        color: $branco;
+                    }
+                }
+            }
+
+            a.link {
+                @include flexAlignContent(row, null, center, 1rem);
+                padding: .5rem;
+                border-radius: .25rem;
+                background-color: #55555540;
+
+                &:hover { background-color: #555555bf; }
+
+                @include LAPTOP {
+                    background-color: transparent;
+                    padding: 0;
+
+                    &:hover {
+                        color: $corPrimaria;
+                        background-color: transparent;
+                    }
+                }
+
+                img.icone {
+                    @include size(1.5rem, 1.5rem);
+                    object-fit: contain;
+
+                    @include LAPTOP {
+                        display: none;
+                    }
+                }
+
+                // span.legenda {}
+            }
+        }
+    }
+}

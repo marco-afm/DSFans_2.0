@@ -1,0 +1,74 @@
+@import "mixins";
+@import "variaveis";
+
+// ========== Títulos ========== //
+.ftTituloG {
+    font: 700 2.25rem $ftTitulo;
+    line-height: 1.125;
+    text-transform: uppercase;
+    color: $corPrimaria;
+
+    @include LAPTOP {
+        font-size: 4rem;
+    }
+}
+.ftTituloM {
+    font: 700 2rem $ftTitulo;
+    line-height: 1.125;
+    text-transform: uppercase;
+    color: $corPrimaria;
+
+    @include LAPTOP {
+        font-size: 3rem;
+    }
+}
+.ftTituloP {
+    font: 700 1.5rem $ftTitulo;
+    line-height: 1.125;
+    text-transform: uppercase;
+    color: $corPrimaria;
+
+    @include LAPTOP {
+        font-size: 2rem;
+    }
+}
+
+// ========== Descrições ========== //
+.ftDescricaoG {
+    font: 400 1.25rem $ftDescricao;
+    line-height: 1.5;
+    color: $cinzaClaro;
+
+    @include LAPTOP {
+        font-size: 1.5rem;
+    }
+}
+.ftDescricaoM {
+    font: 400 1rem $ftDescricao;
+    line-height: 1.5;
+    color: $cinzaClaro;
+
+    @include LAPTOP {
+        font-size: 1.25rem;
+    }
+}
+.ftDescricaoP {
+    font: 400 .875rem $ftDescricao;
+    line-height: 1.5;
+    color: $cinzaClaro;
+
+    @include LAPTOP {
+        font-size: 1rem;
+    }
+}
+
+// ========== Links ========== //
+.ftLink {
+    font: 400 .875rem $ftDescricao;
+    color: $branco;
+    text-decoration: none;
+
+    @include LAPTOP {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,141 @@
+@import '../../ferramentas/ferramentas.scss';
+
+section.temporadas {
+    @include size(100%, 100vh);
+    overflow-x: hidden;
+
+    div.conteudo {
+        height: 100%;
+        box-shadow: inset 0 0 250px 0 $pretoMax;
+
+        article {
+            @include flexAlignContent(column, center, center, 0);
+            @include size(100%, 15%);
+            background-color: $corPrimaria;
+
+            @include LAPTOP {
+                height: 20%;
+            }
+
+            h2.titulo {
+                color: $preto;
+                letter-spacing: -2px;
+            }
+
+            span {
+                text-transform: uppercase;
+                font-weight: 700;
+                font-size: 1rem;
+                color: $branco;
+                
+                @include LAPTOP {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        div.caixaCarrosel {
+            @include flexAlignContent(column, space-between, null, 0);
+            max-width: 100%;
+            height: 85%;
+            padding: 2rem 1rem;
+            position: relative;
+            overflow-x: hidden;
+
+            @include LAPTOP {
+                @include flexAlignContent(row, space-between, center, 0);
+                height: 75%;
+                padding: 0;
+            }
+
+            div.swiper {
+                box-sizing: border-box;
+                @include size(95%, 66%);
+                padding: 0;
+                margin: 0 auto;
+                transition: 1s;
+
+                @include LAPTOP {
+                    width: 50%;
+                    height: 100%;
+                    padding: 3rem 0;
+                    margin: 0;
+                }
+
+                div.swiper-wrapper {
+                    
+                    div.swiper-slide {
+                        @include flexAlignContent(column, null, center, .5rem);
+                        width: auto;
+                        max-height: 100%;
+                            
+                        background-position: center;
+                        background-size: cover;
+
+                        @include LAPTOP {
+                            justify-content: space-between;
+                        }
+
+                        * {
+                            display: none;
+                        }
+    
+                        img {
+                            display: block;
+                            width: auto;
+                            max-height: 90%;
+    
+                            border-radius: .5rem;
+                            box-shadow: 0 0 15px 3px $pretoMax;
+                        }
+
+                        span.legenda {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            div.caixaBtnCta {
+                width: fit-content;
+                padding: 2.5rem;
+                margin: 0 auto;
+                
+                box-shadow: inset 0 0 50px 0 $preto;
+                background-color: $pretoMax;
+                transition: 1s;
+                position: relative;
+
+                border: 5px solid $pretoMax;
+                border-bottom: 10px solid $pretoMax;
+                border-radius: .375rem;
+
+
+                @include LAPTOP {
+                    padding: 4rem;
+                    margin: 0;
+                }
+                
+                &::after {
+                    @include size(2rem, .5rem);
+                    content: "";
+                    display: block;
+                    background-color: $pretoMax;
+
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translate(-50%, 200%);
+
+                    @include LAPTOP	{
+                        transform: translate(-75%, 200%);
+                    }
+                }
+
+                a.btnCta {
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}

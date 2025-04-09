@@ -1,0 +1,94 @@
+@import 'mixins';
+
+// ========== HTML ========== //
+.container {
+
+    @include LAPTOP {
+        width: 965px;
+        margin: 0 auto;
+    }
+}
+.margemTopo {
+    padding: 75px 0 0 0;
+}
+
+
+// ========== Espaçamentos ========== //
+.espacamentoX {
+    padding: 0 1rem;
+
+    @include LAPTOP {
+        padding: 0;
+    }
+}
+.espacamentoY {
+    padding: 1rem 0;
+}
+
+
+// ========== Ícones ========== //
+.caixaIconesCabecalho {
+    display: flex;
+    position: relative;
+
+    &:hover {
+        .iconeCabecalho { opacity: 0; }
+        
+        .iconeCabecalhoVermelho { opacity: 1; }
+    }
+    
+    .iconeCabecalho {
+        position: absolute;
+    }
+
+    .iconeCabecalhoVermelho {
+        position: absolute;
+        opacity: 0;
+    }
+}
+.iconeCabecalho {
+    @include size(2.5rem, 2.5rem);
+    object-fit: contain;
+    cursor: pointer;
+
+    @include LAPTOP {
+        @include size(2rem, 2rem);
+    }
+}
+.iconeSessaoP {
+    @include size(3rem, 3rem);
+
+    @include LAPTOP {
+        @include size(4.5rem, 4.5rem);
+    }
+}
+.iconeSessaoG {
+    @include size(30rem, 30rem);
+    object-fit: contain;
+    position: absolute;
+}
+
+
+// ========== Botões ========== //
+.btnCta {
+    @include flexAlignContent(row, center, center, 0);
+    @include size(150px, 40px);
+    
+    background-color: transparent;
+    border: 1px solid $corPrimaria;
+    border-radius: 2rem;
+    
+    color: $corPrimaria;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0 0 25px 0 $pretoMax;
+        background-color: $corPrimaria;
+        color: $branco;
+    }
+
+    @include LAPTOP {
+        @include size(200px, 50px);
+    }
+}

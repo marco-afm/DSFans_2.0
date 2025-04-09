@@ -1,0 +1,49 @@
+@import '../../ferramentas/ferramentas.scss';
+
+section.novidades {
+    @include size(100%, 100vh);
+    box-shadow: inset 0 0 250px 0 $pretoMax;
+    overflow-x: hidden;
+
+    div.conteudo {
+        @include flexAlignContent(column, center, null, 3rem);
+        height: 100%;
+        position: relative;
+        
+        article {
+            @include flexColumn(2rem);
+            transition: 1s;
+
+            @include LAPTOP {
+                width: 66%;
+            }
+
+            h2.titulo {
+                @include separador(5px);
+            }
+
+            p.descricaoDestacada {
+                box-shadow: inset 0 0 25px 0 $corPrimaria;
+                border-radius: .5rem;
+                padding: 1rem 1.5rem;
+                font-weight: 700;
+                color: $branco;
+                
+                strong {
+                    color: $corPrimaria;
+                }
+            }
+        }
+
+        img.iconeSessaoG {
+            display: none;
+            transition: 1s;
+
+            @include LAPTOP {
+                display: block;
+                right: -10rem;
+                opacity: .05;
+            }
+        }
+    }
+}

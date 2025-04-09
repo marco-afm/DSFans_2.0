@@ -1,0 +1,23 @@
+@import '../../ferramentas/ferramentas.scss';
+
+footer.rodape {
+    @include size(100%, auto);
+    background-color: $pretoMax;
+
+    div.conteudo {
+        padding: 2rem 0;
+        text-align: center;
+
+        span.legenda {
+            color: $cinza;
+
+            a.linkRodape {
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

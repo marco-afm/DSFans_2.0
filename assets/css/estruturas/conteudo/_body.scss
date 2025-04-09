@@ -1,0 +1,18 @@
+@import '../../ferramentas/ferramentas.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: ease-in-out .3s;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $preto;
+    overflow-x: hidden;
+    height: 100%;
+}

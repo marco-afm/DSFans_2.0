@@ -1,0 +1,90 @@
+@import '../../ferramentas/ferramentas.scss';
+
+section.cadastro {
+    @include size(100%, 100vh);
+    box-shadow: inset 0 0 250px 0 $pretoMax;
+    overflow-x: hidden;
+
+    div.conteudo {
+        @include flexAlignContent(column, center, null, 3rem);
+        height: 100%;
+        position: relative;
+
+        div {
+            @include flexColumn(2rem);
+            transition: 1s;
+
+            @include LAPTOP {
+                width: 66%;
+            }
+
+            h2.titulo {
+                @include separador(5px);
+            }
+
+            // p.descricao {}
+
+            form.formulario {
+                @include flexAlignContent(row, center, center, 0);
+                @include size(100%, 50px);
+                
+                border: 1px solid $cinzaClaro;
+                border-radius: 2rem;
+                padding: 0.25rem;
+
+                @include LAPTOP {
+                    width: 66%;
+                }
+
+                input#inputEmail {
+                    @include size(100%, 100%);
+                    padding: 0 1rem;
+                    outline: none;
+
+                    font: 400 1.125rem "Inter";
+                    color: $branco;
+                    
+                    background-color: transparent;
+                    border-radius: 2rem;
+                    border: none;
+
+                    &::placeholder {
+                        color: $cinza;
+                    }
+                }
+
+                button.btnForm {
+                    @include flexAlignContent(row, center, center, 0);
+                    padding: 0 1rem;
+                    height: 100%;
+
+                    background-color: $corPrimaria;
+                    border: none;
+                    border-radius: 2rem;
+                    
+                    position: relative;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: $corPrimariaEscura;
+                    }
+
+                    span {
+                        color: $branco;
+                    }
+                }
+            }
+        }
+
+        img.iconeSessaoG {
+            display: none;
+            transition: 1s;
+            opacity: .05;
+            
+            @include LAPTOP {
+                display: block;
+                right: -10rem;
+            }
+        }
+    }
+}

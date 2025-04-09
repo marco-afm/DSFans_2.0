@@ -1,0 +1,35 @@
+@import '../../ferramentas/ferramentas.scss';
+
+section.sobreNos {
+    @include size(100%, 100vh);
+    box-shadow: inset 0 0 250px 0 $cinzaEscuro;
+    background-color: $pretoMax;
+    overflow-x: hidden;
+
+    div.conteudo {
+        @include flexAlignContent(column, center, null, 3rem);
+        height: 100%;
+
+        article {
+            @include flexColumn(2rem);
+            margin: 0 auto;
+            transition: 1s;
+            
+            @include LAPTOP {
+                width: 66%;
+            }
+
+            div {
+                @include flexAlignContent(row, space-between, center, 1rem);
+
+                h2.titulo {
+                    @include separador(5px);
+                }
+            }
+
+            p.descricao {
+                text-align: justify;
+            }
+        }
+    }
+}
